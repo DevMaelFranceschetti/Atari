@@ -12,7 +12,7 @@ cma
 numpy  
 tensorflow 1.14.0  
 matplotlib (gradient.py and vignette.py visualizations)  
-PIL (gradient.py and vignette.pu visualizations)  
+PIL (gradient.py and vignette.py visualizations)  
 ffmpeg (video output from monitor in viz.py)  
 
 ## Launch algorithms (examples) : 
