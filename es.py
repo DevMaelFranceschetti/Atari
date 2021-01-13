@@ -273,7 +273,6 @@ class sepCEM: # ADDED CEM
     ############################################
 
     if self.antithetic or self.use_noise_table:
-      assert (self.popsize % 2 == 0), "Population size must be even"
       self.half_popsize = int(self.popsize / 2)
     if parents is None or parents <= 0:
       self.parents = self.popsize // 2
@@ -291,12 +290,15 @@ class sepCEM: # ADDED CEM
     """
 
     ##########      MODIF      ##########
+    unpair = self.popsize % 2
     if self.use_noise_table :
-      self.epsilon_half = np.zeros((self.half_popsize, self.num_params))
-      for i in range(self.half_popsize):
+      self.epsilon_half = np.zeros((self.half_popsize + unpair, self.num_params))
+      for i in range(self.half_popsize + unpair):
         r_id = self.r_noise_id()
         self.epsilon_half[i] = self.noise_table[r_id:(r_id + self.num_params)]
       self.epsilon = np.concatenate([self.epsilon_half, - self.epsilon_half])
+      if unpair == 1 :
+        self.epsilon = np.delete(self.epsilon,0,0)
     #####################################
 
     else:
@@ -379,7 +381,6 @@ class OpenES:
     ############################################
 
     if self.antithetic or self.use_noise_table:
-      assert (self.popsize % 2 == 0), "Population size must be even"
       self.half_popsize = int(self.popsize / 2)
 
     self.reward = np.zeros(self.popsize)
@@ -408,12 +409,15 @@ class OpenES:
     '''returns a list of parameters'''
     
     ##########      MODIF      ##########
+    unpair = self.popsize % 2
     if self.use_noise_table :
-      self.epsilon_half = np.zeros((self.half_popsize, self.num_params))
-      for i in range(self.half_popsize):
+      self.epsilon_half = np.zeros((self.half_popsize + unpair, self.num_params))
+      for i in range(self.half_popsize + unpair):
         r_id = self.r_noise_id()
         self.epsilon_half[i] = self.noise_table[r_id:(r_id + self.num_params)]
       self.epsilon = np.concatenate([self.epsilon_half, - self.epsilon_half])
+      if unpair == 1 :
+        self.epsilon = np.delete(self.epsilon,0,0)
     #####################################
 
     # antithetic sampling
