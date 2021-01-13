@@ -16,7 +16,9 @@ PIL (gradient.py and vignette.pu visualizations)
 ffmpeg (video output from monitor in viz.py)
 
 ## Launch algorithms (examples) : 
+
 python3.6 main.py --algo CEM --env Qbert --nb_eval 10 --pop_size 15
+
 python3.6 main.py --algo OpenES --env Qbert --nb_eval 10 --pop_size 15
 
 
