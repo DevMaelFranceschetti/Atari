@@ -33,7 +33,7 @@ python3.6 vignette.py --env Qbert --filename my_parameters --basename "params" -
 If you want to compute less directions around the parameters, you can tune the nb_lines parameter. Default is 50. You can also decrease the precision and the number of parameters tested around by increasing the stepalpha parameter. See an example :  
 python3.6 vignette.py --env Qbert --filename my_parameters --basename "params" --min_iter 1 --max_iter 1 --step_iter 1 --nb_lines 30 --stepalpha 2.5  
 
-Parameters are quite similar vor Gradient.py.
+Parameters are quite similar for Gradient.py.
 
 
 
