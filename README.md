@@ -1,7 +1,8 @@
 # Atari
-OpenES and CEM code for Atari using Nature network, and analyse tools
+OpenES and CEM code for Atari using Nature network, and analysis tools.
 
-Based on OpenAI ES code from estool, CEM code from CEM-RL and Nature network from Canonical_ES_Atari
+Based on OpenAI ES code from estool, CEM code from CEM-RL, Nature network from Canonical_ES_Atari.  
+Tools vignette.py and gradient_study.py have been adapted from https://github.com/DevMaelFranceschetti/PAnd_Swimmer .  
 
 ## Requirements : 
 python3.6  
